@@ -1,0 +1,10 @@
+server_host = 10.0.0.1, 10.0.0.2
+server_port = 389
+version = 3
+timeout = 10
+search_base = dc=company, dc=local
+query_filter = (&(proxyAddresses=smtp:%s)(|(objectClass=user)(objectClass=group)(objectClass=contact)(objectClass=publicFolder)))
+result_attribute = mail
+bind = yes
+bind_dn = smta.service.account@company.local
+bind_pw = mysecuredPassword

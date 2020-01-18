@@ -1,0 +1,2 @@
+/admin@company.local/  FILTER smtp-amavis:[127.0.0.1]:10029
+/intra@company.local/  FILTER smtp-amavis:[127.0.0.1]:10029

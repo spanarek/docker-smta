@@ -1,0 +1,3 @@
+/intra@company.local/  strong_check_sender_restrictions
+/marketing@company.local/  strong_check_sender_restrictions
+/boss@company.local/  whitelist_sender_restrictions

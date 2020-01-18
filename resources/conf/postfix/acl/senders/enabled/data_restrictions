@@ -1,0 +1,2 @@
+/ex.lan/  FILTER smtp-amavis:[127.0.0.1]:10028
+/m.example.lan/  FILTER smtp-amavis:[127.0.0.1]:10028

@@ -1,0 +1,2 @@
+/^mta/  REJECT
+/^trusted/  OK

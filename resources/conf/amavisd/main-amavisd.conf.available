@@ -1,0 +1,18 @@
+$banned_filename_re = new_RE(qr'^UNDECIPHERABLE$',   qr'.\.(pif|scr)$'i,   qr'^application/x-msdownload$'i,   qr'^application/x-msdos-program$'i,   qr'^application/hta$'i,   qr'^(?!cid:).*\.[^./]*[A-Za-z][^./]*\.\s*(exe|vbs|pif|scr|bat|cmd|com|cpl|dll)[.\s]*$'i,   qr'.\.(ade|adp|app|bas|bat|chm|cmd|com|cpl|crt|emf|exe|fxp|grp|hlp|hta|inf|ini|ins|isp|js|jse|jsp|lib|lnk|mda|mdb|mde|mdt|mdw|mdz|msc|msi|msp|mst|ocx|ops|pcd|pif|prg|reg|scr|sct|shb|shs|sys|vb|vbe|vbs|vxd|wmf|wsc|wsf|wsh)$'ix);
+$do_syslog = 1;
+$QUARANTINEDIR = "/var/amavis/quarantine";
+my $recipient_score_sender_maps = { new_RE(qr'user@company.local')  =>  [new_RE( [qr'.*dx.lan' => +15],  [qr'boybad.lan' => +15], )], 'company.local'  =>  [new_RE( [qr'.*dx.lan' => +15],  [qr'bad.lan' => +15], )], };
+my $banned_filename_maps_trusted = [new_RE( [qr'^.*$' => 'DEFAULT'] )];
+my $banned_filename_maps_origin = [new_RE( [qr'^user\.[a-z]\.[0-9]@example\.lan' => 'BLOCK_ALL'],  [qr'example\.lan' => 'BLOCK_ALL'],  [qr'^.*$' => 'DEFAULT'] )];
+$sa_spam_subject_tag = '***Spam*** ';
+$undecipherable_subject_tag = '***UNCHECKED***';
+$final_banned_destiny = D_DISCARD;
+$final_spam_destiny = D_DISCARD;
+$final_bad_header_destiny = D_DISCARD;
+$final_virus_destiny = D_DISCARD;
+$enable_dkim_verification = 1;
+$log_level = 0;
+$sa_mail_body_size_limit = 400*1024;
+$bounce_killer_score = 0;
+$sa_tag2_level_deflt = 5.0;
+$sa_kill_level_deflt = 6.9;

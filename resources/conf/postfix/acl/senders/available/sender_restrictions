@@ -1,0 +1,3 @@
+/my-example.lan/  REJECT
+/e.my.lan/  REJECT
+/no-reply@onetwo.lan/  OK
